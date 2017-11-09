@@ -1,9 +1,9 @@
 ###How to create a function
 
-    ```
-    def not_working(df, x):
+    
+    ```def not_working(df, x):
         df = df[df.workingday == x] #np.where(bikes.workingday==x)
         return df.groupby('hour').total.mean().plot()
 
-    not_working(bikes,0)
-    ```
+    not_working(bikes,0)```
+    
