@@ -1,0 +1,2 @@
+# Stupy
+Python snippets
