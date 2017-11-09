@@ -47,8 +47,16 @@ y = glass.household
 
 # Fit the model
 logreg.fit(X, y)
-glass['household_pred_class'] = logreg.predict(X)
 
+# Examine coefficiencts
+logreg.coef_
+
+# make predictions
+glass['household_pred_class'] = logreg.predict(X)
+```
+# Plotting predictions
+
+```
 # plot the class predictions
 plt.scatter(glass.al, glass.household)
 plt.plot(glass.al, glass.household_pred_class, color='red')
