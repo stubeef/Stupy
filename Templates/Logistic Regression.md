@@ -1,5 +1,6 @@
 # Logistic Regression
 
+Setting the context and showing pre-processing steps as we import the data
 ```
 # glass identification dataset
 import pandas as pd
@@ -13,14 +14,16 @@ glass.glass_type.value_counts(normalize=1)
 
 # examine the number of observations by glass_type
 glass.glass_type.value_counts().sort_index()
-
+```
+## Numpy can only take numbers, so we use the map function to assign different glass types to a number. 
+```
 # types 1, 2, 3 are window glass
 # types 5, 6, 7 are household glass
 #numpy can only take numbers
 glass['household'] = glass.glass_type.map({1:0, 2:0, 3:0, 5:1, 6:1, 7:1})
 glass.head()
 ```
-# understanding np.where and transform variables to 1 or 0
+## understanding np.where and transform variables to 1 or 0
 ```
 import numpy as np
 nums = np.array([5, 15, 8])
@@ -34,16 +37,18 @@ glass.tail()
 ```
 # Logistic Regression with a continuous variable
 ```
+from sklearn.linear_model import LogisticRegression
+logreg = LogisticRegression()
+
 # fit a logistic regression model and store the class predictions
 feature_cols = ['al']
 X = glass[feature_cols]
 y = glass.household
 
-from sklearn.linear_model import LogisticRegression
-logreg = LogisticRegression()
-
+# Fit the model
 logreg.fit(X, y)
 glass['household_pred_class'] = logreg.predict(X)
+
 # plot the class predictions
 plt.scatter(glass.al, glass.household)
 plt.plot(glass.al, glass.household_pred_class, color='red')
