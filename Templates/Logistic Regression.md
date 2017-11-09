@@ -1,4 +1,4 @@
-### Logistic Regression
+# Logistic Regression
 
 ```
 # glass identification dataset
@@ -20,7 +20,7 @@ glass.glass_type.value_counts().sort_index()
 glass['household'] = glass.glass_type.map({1:0, 2:0, 3:0, 5:1, 6:1, 7:1})
 glass.head()
 ```
-# understanding np.where and transorm variables to 1 or 0
+# understanding np.where and transform variables to 1 or 0
 ```
 import numpy as np
 nums = np.array([5, 15, 8])
@@ -32,7 +32,7 @@ np.where(nums > 10, 'big', 'small')
 glass['household_pred_class'] = np.where(glass.household_pred >= 0.5, 1, 0)
 glass.tail()
 ```
-# Logistic Regressio with a continuous variable
+# Logistic Regression with a continuous variable
 ```
 # fit a logistic regression model and store the class predictions
 feature_cols = ['al']
