@@ -1,4 +1,5 @@
-# Handling categorical features- Use dummy variables. We use these to avoid ordered relationships (1 = spring, 2 = summer, 3 = fall, and 4 = winter)
+# Handling categorical features
+### Use dummy variables. We use these to avoid ordered relationships (1 = spring, 2 = summer, 3 = fall, and 4 = winter)
 
 ```# create dummy variables
 season_dummies = pd.get_dummies(bikes.season, prefix='season')
