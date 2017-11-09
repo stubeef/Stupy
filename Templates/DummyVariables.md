@@ -1,4 +1,4 @@
-# Handling categorical features
+# Handling categorical features in linear regression
 ### Use dummy variables. We use these to avoid ordered relationships (1 = spring, 2 = summer, 3 = fall, and 4 = winter)
 
 ```# create dummy variables
