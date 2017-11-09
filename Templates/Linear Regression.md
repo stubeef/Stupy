@@ -1,7 +1,6 @@
 ### Linear Regression
 
 # create X and y
-
 ```
 # create a list of features
 feature_cols = ['temp', 'season', 'weather', 'humidity']
@@ -24,7 +23,7 @@ print linreg.coef_
 zip(feature_cols, linreg.coef_)
 ```
 
-### Using the model to form a prediction
+# Using the model to form a prediction
 
 ```
 # manually calculate the prediction
@@ -34,7 +33,7 @@ linreg.intercept_ + linreg.coef_*25
 linreg.predict(25)
 ```
 
-##Error Terms
+# Error Terms
 ```
 # example true and predicted response values
 true = [10, 7, 5, 5]
