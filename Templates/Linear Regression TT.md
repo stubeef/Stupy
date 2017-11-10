@@ -1,5 +1,5 @@
 # Test and Train Split
-
+## Import Model
 ```
 # from sklearn.cross_validation import train_test_split # deprecated syntax
 from sklearn.model_selection import train_test_split
@@ -15,25 +15,28 @@ def train_test_rmse(feature_cols):
     linreg.fit(X_train, y_train)
     y_pred = linreg.predict(X_test)
     return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
-    
-    train_test_split(X, y, random_state=123)
+```
+# Compare different sets of features
     
     # compare different sets of features
     print train_test_rmse(['temp', 'season', 'weather', 'humidity'])
     print train_test_rmse(['temp', 'season', 'weather'])
     print train_test_rmse(['temp', 'season', 'humidity'])
     print train_test_rmse(['temp', 'humidity'])
-    
-    # split X and y into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123)
+    ```
+ 
+# Comparing RMSE with null RMSE
+     ```
+        # split X and y into training and testing sets
+        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123)
 
-# create a NumPy array with the same shape as y_test
-y_null = np.zeros_like(y_test, dtype=float)
+    # create a NumPy array with the same shape as y_test
+    y_null = np.zeros_like(y_test, dtype=float)
 
-# fill the array with the mean value of y_test
-y_null.fill(y_test.mean())
-y_null
+    # fill the array with the mean value of y_test
+    y_null.fill(y_test.mean())
+    y_null
 
-# compute null RMSE
-np.sqrt(metrics.mean_squared_error(y_test, y_null))
+    # compute null RMSE
+    np.sqrt(metrics.mean_squared_error(y_test, y_null))
  ```
