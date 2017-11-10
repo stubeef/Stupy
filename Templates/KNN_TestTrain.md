@@ -58,26 +58,28 @@ for k in k_range:
     testing_accuracy = metrics.accuracy_score(y_test, y_pred_class)
     testing_error_rate.append(1 - testing_accuracy)
     
-    # allow plots to appear in the notebook
-%matplotlib inline
-import matplotlib.pyplot as plt
-plt.style.use('fivethirtyeight')
+    
+    
+   # allow plots to appear in the notebook
+   %matplotlib inline
+   import matplotlib.pyplot as plt
+   plt.style.use('fivethirtyeight')
 
-# create a DataFrame of K, training accuracy, and testing acc
-column_dict = {'K': k_range, 'training error rate':training_error_rate, 'testing error rate':testing_error_rate}
-df = pd.DataFrame(column_dict).set_index('K').sort_index(ascending=True)
-df.head()
+   # create a DataFrame of K, training accuracy, and testing acc
+   column_dict = {'K': k_range, 'training error rate':training_error_rate, 'testing error rate':testing_error_rate}
+   df = pd.DataFrame(column_dict).set_index('K').sort_index(ascending=True)
+   df.head()
 
-# plot the relationship between K (HIGH TO LOW) and TESTING Accuracy
-df.plot(y='testing error rate')
-plt.xlabel('Value of K for KNN')
-plt.ylabel('Error rate (lower is better)')
+   # plot the relationship between K (HIGH TO LOW) and TESTING Accuracy
+   df.plot(y='testing error rate')
+   plt.xlabel('Value of K for KNN')
+   plt.ylabel('Error rate (lower is better)')
 
-# find the minimum testing error and the associated K value
-df.sort_values(by='testing error rate').head()
+   # find the minimum testing error and the associated K value
+   df.sort_values(by='testing error rate').head()
 
-# alternative method
-min(zip(testing_error_rate, k_range)) 
+   # alternative method
+   min(zip(testing_error_rate, k_range)) 
 ```
 ### Training error versus testing error
 ```
