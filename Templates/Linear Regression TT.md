@@ -24,7 +24,7 @@ def train_test_rmse(feature_cols):
     print train_test_rmse(['temp', 'humidity'])
     
     # split X and y into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123)
 
 # create a NumPy array with the same shape as y_test
 y_null = np.zeros_like(y_test, dtype=float)
