@@ -79,6 +79,13 @@ df.sort_values(by='testing error rate').head()
 # alternative method
 min(zip(testing_error_rate, k_range)) 
 ```
+# Training error versus testing error
+```
+# plot the relationship between K (HIGH TO LOW) and both TRAINING ERROR and TESTING ERROR
+df.plot()
+plt.xlabel('Value of K for KNN')
+plt.ylabel('Error rate (lower is better)')
+```
 # Making predicitons on out-of-sample data
 ```
 # instantiate the model with the best known parameters
