@@ -3,6 +3,8 @@
 ```
 # from sklearn.cross_validation import train_test_split # deprecated syntax
 from sklearn.model_selection import train_test_split
+```
+
 # define a function that accepts a list of features and returns testing RMSE
 def train_test_rmse(feature_cols):
     X = bikes[feature_cols]
