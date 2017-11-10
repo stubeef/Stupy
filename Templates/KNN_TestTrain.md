@@ -5,35 +5,35 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 ```
 
-# STEP 1: split X and y into training and testing sets (using random_state for reproducibility) (K= 1)
+### STEP 1: split X and y into training and testing sets (using random_state for reproducibility) (K= 1)
 `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=99)`
 
-# STEP 2: train the model on the training set (using K=1)
+### STEP 2: train the model on the training set (using K=1)
 ```
    knn = KNeighborsClassifier(n_neighbors=1)
    knn.fit(X_train, y_train)
    ```
 
-# STEP 3: test the model on the testing set, and check the accuracy
+### STEP 3: test the model on the testing set, and check the accuracy
    ```
    y_pred_class = knn.predict(X_test)
    print metrics.accuracy_score(y_test, y_pred_class)
    ```
 
-# Repeating for K=50
+### Repeating for K=50
 ```knn = KNeighborsClassifier(n_neighbors=50)
 knn.fit(X_train, y_train)
 y_pred_class = knn.predict(X_test)
 print metrics.accuracy_score(y_test, y_pred_class)
 # Comparing testing accuracy to null accuracy
 ```
-# examine the class distribution
+### examine the class distribution
 `y_test.value_counts()`
 
-# compute null accuracy
+### compute null accuracy
 ```y_test.value_counts().head(1) / len(y_test)```
 
-# Searching the 'best' value of K
+### Searching the 'best' value of K
 ```
 # calculate TRAINING Accuracy and TESTING accuracy for K=1 through 100
 
@@ -79,14 +79,14 @@ df.sort_values(by='testing error rate').head()
 # alternative method
 min(zip(testing_error_rate, k_range)) 
 ```
-# Training error versus testing error
+### Training error versus testing error
 ```
 # plot the relationship between K (HIGH TO LOW) and both TRAINING ERROR and TESTING ERROR
 df.plot()
 plt.xlabel('Value of K for KNN')
 plt.ylabel('Error rate (lower is better)')
 ```
-# Making predicitons on out-of-sample data
+### Making predicitons on out-of-sample data
 ```
 # instantiate the model with the best known parameters
 knn = KNeighborsClassifier(n_neighbors=14)
