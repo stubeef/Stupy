@@ -9,30 +9,34 @@ X_train, X_test, y_train, y_test = train_test_split(X, y)
 `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=99)`
 
 # STEP 2: train the model on the training set (using K=1)
-`knn = KNeighborsClassifier(n_neighbors=1)
-`knn.fit(X_train, y_train)`
+```
+   knn = KNeighborsClassifier(n_neighbors=1)
+   knn.fit(X_train, y_train)
+   ```
 
 # STEP 3: test the model on the testing set, and check the accuracy
-```y_pred_class = knn.predict(X_test)
-   print metrics.accuracy_score(y_test, y_pred_class)```
+   ```
+   y_pred_class = knn.predict(X_test)
+   print metrics.accuracy_score(y_test, y_pred_class)
+   ```
 
 # Repeating for K=50
 ```knn = KNeighborsClassifier(n_neighbors=50)
 knn.fit(X_train, y_train)
 y_pred_class = knn.predict(X_test)
-print metrics.accuracy_score(y_test, y_pred_class)```
+print metrics.accuracy_score(y_test, y_pred_class)
 # Comparing testing accuracy to null accuracy
 ```
 # examine the class distribution
 `y_test.value_counts()`
 
 # compute null accuracy
-```y_test.value_counts().head(1) / len(y_test)
+```y_test.value_counts().head(1) / len(y_test)```
 
 # Searching the 'best' value of K
 ```
 # calculate TRAINING Accuracy and TESTING accuracy for K=1 through 100
-```
+
 k_range = range(1, 101)
 training_error_rate = []
 testing_error_rate = []
