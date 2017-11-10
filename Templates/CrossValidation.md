@@ -90,12 +90,13 @@ print np.sqrt(-cross_val_score(lm, X, y, cv=10, scoring='mean_squared_error')).m
 ```
 
 Resources
-[scikit-learn documentation:](Cross-validation),(Model evaluation)
-scikit-learn issue on GitHub: MSE is negative when returned by cross_val_score
-Section 5.1 of An Introduction to Statistical Learning (11 pages) and related videos: K-fold and leave-one-out cross-validation (14 minutes), Cross-validation the right and wrong ways (10 minutes)
-Scott Fortmann-Roe: Accurately Measuring Model Prediction Error
-Machine Learning Mastery: An Introduction to Feature Selection
-Harvard CS109: Cross-Validation: The Right and Wrong Way
-Journal of Cheminformatics: Cross-validation pitfalls when selecting and assessing regression and classification models
+[scikit-learn documentation](Cross-validation)
+[scikit-learn documentation](Model evaluation)
+[scikit-learn issue on GitHub:](MSE is negative when returned by cross_val_score)
+[Section 5.1 of An Introduction to Statistical Learning (11 pages) and related videos:](K-fold and leave-one-out cross-validation) [Section 5.1 of An Introduction to Statistical Learning (11 pages) and related videos:](Cross-validation the right and wrong ways)
+[Scott Fortmann-Roe:](Accurately Measuring Model Prediction Error)
+[Machine Learning Mastery:](An Introduction to Feature Selection)
+[Harvard CS109: Cross-Validation:](The Right and Wrong Way)
+[Journal of Cheminformatics:](Cross-validation pitfalls when selecting and assessing regression and classification models)
 
 
