@@ -91,7 +91,9 @@ print np.sqrt(-cross_val_score(lm, X, y, cv=10, scoring='mean_squared_error')).m
 
 Resources
 [scikit-learn documentation](Cross-validation)
+
 [scikit-learn documentation](Model evaluation)
+
 [scikit-learn issue on GitHub:](MSE is negative when returned by cross_val_score)
 [Section 5.1 of An Introduction to Statistical Learning (11 pages) and related videos:](K-fold and leave-one-out cross-validation) [Section 5.1 of An Introduction to Statistical Learning (11 pages) and related videos:](Cross-validation the right and wrong ways)
 [Scott Fortmann-Roe:](Accurately Measuring Model Prediction Error)
