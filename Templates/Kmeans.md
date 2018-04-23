@@ -10,7 +10,23 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_d_scaled = scaler.fit_transform(X_d)
 ```
-## Run Model
+## Create Feature columns and transform variables
+```
+
+dfd['curated_main_event_num'] = dfd.curated_main_event.map({'EVENT_1':0,
+                                                      'EVENT_2':1, 
+                                                      'EVENT_3':2,
+                                                      'EVENT_4':3,
+                                                      'EVENT_5':4,
+                                                      'EVENT_6':5,
+                                                      'EVENT_7':6})
+                                                      
+feature_cols = ['EVENT_1','EVENT_2']
+X_d= dfd[feature_cols]
+print(X_d)
+```
+
+## Run Scaled Model
 ```
 # K-means with 5 clusters on scaled data
 kmeans_d = KMeans(n_clusters=2, random_state=0).fit(X_d_scaled)
