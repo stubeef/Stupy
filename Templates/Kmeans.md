@@ -33,3 +33,42 @@ dfd.groupby('cluster').mean()
 
 dcenters = dfd.groupby('cluster').mean()
 ```
+## Visualize 
+```
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.rcParams['font.size'] = 14
+pd.plotting.scatter_matrix(X_d, c=dfd.cluster, figsize=(20,20), s=250)
+```
+## Scatter Plot Visualization
+```
+# scatter plot of calories versus alcohol, colored by cluster (0=red, 1=green, 2=blue)
+plt.scatter(dfd.square_diff_log, dfd.square_diff_items_log, c=dfd.cluster, s=50)
+
+# cluster centers, marked by "+"
+plt.scatter(dcenters.square_diff_log, dcenters.square_diff_items_log, linewidths=3, marker='+', s=300, c='black')
+
+# add labels
+plt.xlabel('demand')
+plt.ylabel('items')
+```
+## Cluster Evaluation and Silhousette Coefficient
+```
+# calculate Silhouette Coefficient for K=5
+from sklearn import metrics
+metrics.silhouette_score(X_d_scaled, kmeans_d.labels_)
+
+# calculate SC for K=2 through K=19
+k_range = range(2, 20)
+scores = []
+for k in k_range:
+    kmeans = KMeans(n_clusters=k, random_state=1)
+    kmeans.fit(X_d_scaled)
+    scores.append(metrics.silhouette_score(X_d_scaled, kmeans.labels_))
+
+# plot the results
+plt.plot(k_range, scores)
+plt.xlabel('Number of clusters')
+plt.ylabel('Silhouette Coefficient')
+plt.grid(True)
+```
