@@ -51,5 +51,8 @@ CASE WHEN I.JOIN_DATE < G.DAY_DATE THEN 1
         WHEN I.JOIN_DATE IS NULL AND I.CUSTOMER_ID IS NOT NULL THEN 1
         ELSE 0
     END CUSTOMER_FLAG
-
+    
+  ## Box plot links
+  http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/
+  https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots
 
