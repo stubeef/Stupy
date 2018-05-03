@@ -55,4 +55,28 @@ CASE WHEN I.JOIN_DATE < G.DAY_DATE THEN 1
   ## Box plot links
   http://blog.bharatbhole.com/creating-boxplots-with-matplotlib/
   https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots
+  
+  ## Merge Process
+  MERGE INTO Table_1 AS A USING Table_2 AS B
+        
+        ON 
+        A.SESSION_KEY = B.SESSION_KEY
+		
+        
+        
+        WHEN NOT MATCHED THEN 
+        INSERT VALUES ( B.*)
+        
+        
+        WHEN MATCHED THEN UPDATE SET
+		A.col1 = B.col1, 
+		A.col2  = B.col2,
+		A.col3  =B.col3, 
+		A.col4 =B.col4, 
+		A.col5 =B.col5, 
+		A.col6 = B.col6,
+		A.col7 = B.col7,
+		A.col8 = B.col8,
+		A.col9 = B.col9
+	
 
